@@ -11,6 +11,8 @@
  * criaNovoVetor([1, 2, 3], 0, 0) // [1, 2, 3, 0, 0]
  */
 
+import { promises } from "timers";
+
 //Início do seu código
 
 function criaNovoVetor(v: number[], v1: number, v2: number) {
@@ -53,6 +55,7 @@ function divisivelPor11(minimo: number, maximo: number) {
 console.log(divisivelPor11(1, 110))
 
 
+
 //Fim do seu código
 
 
@@ -69,7 +72,7 @@ console.log(divisivelPor11(1, 110))
  * const pessoa3 = {id: 3, nome: 'José', idade: 17}
  * maioresDeIdade([pessoa1, pessoa2, pessoa3]) // [pessoa1, pessoa2]
  */
-interface Pessoa{
+interface Pessoa {
     id: number,
     nome: string,
     idade: number
@@ -77,7 +80,39 @@ interface Pessoa{
 
 //Início do seu código
 function maioresDeIdade() {
-    
+
 }
 
 //Fim do seu código
+
+
+
+
+
+
+
+
+
+
+
+
+console.log("Início da execução do código")
+//async function funcao (){
+const funcao = async () => {
+    const prom =
+        new Promise<string>((resolve, reject) => {
+            setTimeout(function handle() {
+                reject("Executei a função")
+            }, 5000)
+        })
+    return prom
+}
+try {
+const resultado = await funcao()
+console.log(erro)
+}
+catch (erro) {
+    console.log("Minha mensagem de erro:" + erro)
+}
+
+console.log("Fim da execução do código")
