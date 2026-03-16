@@ -18,10 +18,10 @@ import { promises } from "timers";
 //Início do seu código
 
 function criaNovoVetor(v: number[], v1: number, v2: number) {
-    const novoVetor = v.concat(v1, v2)
-    return novoVetor
+  const novoVetor = v.concat(v1, v2);
+  return novoVetor;
 }
-console.log(criaNovoVetor([1, 2, 3], 0, 0))
+console.log(criaNovoVetor([1, 2, 3], 0, 0));
 
 //Fim do seu código
 
@@ -34,28 +34,25 @@ console.log(criaNovoVetor([1, 2, 3], 0, 0))
  * @returns {number[]} Retorna um array com os números divisíveis por 11 no intervalo
  * @example
  *  divisivelPor11(1, 100) // [11, 22, 33, 44, 55, 66, 77, 88, 99]
- *  
+ *
  * divisivelPor11(11, 110) // [11, 22, 33, 44, 55, 66, 77, 88, 99, 110]
  */
 
 //Início do seu código
 
 function divisivelPor11(minimo: number, maximo: number) {
+  const vazio = [];
 
-
-    const vazio = [];
-
-    for (let i = minimo; i <= maximo; i++) {
-        const element = i;
-        if (i % 11 == 0) {
-            vazio.push(i)
-        }
+  for (let i = minimo; i <= maximo; i++) {
+    const element = i;
+    if (i % 11 == 0) {
+      vazio.push(i);
     }
-    return vazio
-
+  }
+  return vazio;
 }
 
-console.log(divisivelPor11(1, 110))
+console.log(divisivelPor11(1, 110));
 
 //Fim do seu código
 
@@ -66,41 +63,39 @@ console.log(divisivelPor11(1, 110))
  * @param {vetor:Pessoa[]} vetor Vetor de objetos com id, nome e idade
  * @returns {Pessoa[]} Retorna um array com os objetos com idade maior que 18
  * @example
- * 
+ *
  * const pessoa1 = {id: 1, nome: 'João', idade: 20}
  * const pessoa2 = {id: 2, nome: 'Maria', idade: 18}
  * const pessoa3 = {id: 3, nome: 'José', idade: 17}
  * maioresDeIdade([pessoa1, pessoa2, pessoa3]) // [pessoa1, pessoa2]
  */
 interface Pessoa {
-    id: number,
-    nome: string,
-    idade: number
+  id: number;
+  nome: string;
+  idade: number;
 }
 
 //Início do seu código
 
 function maioresDeIdade(vetor: Pessoa[]) {
+  const vazio = [];
 
-    const vazio = [];
-
-    for (let i = 0; i < vetor.length; i++) {
-        const element = vetor[i]!;
-        if (element.idade >= 18) {
-            vazio.push(element)
-        }
+  for (let i = 0; i < vetor.length; i++) {
+    const element = vetor[i]!;
+    if (element.idade >= 18) {
+      vazio.push(element);
     }
+  }
 
-
-    return vazio
+  return vazio;
 }
 
-const pessoa1 = { id: 1, nome: 'João', idade: 20 }
-const pessoa2 = { id: 2, nome: 'Maria', idade: 18 }
-const pessoa3 = { id: 3, nome: 'José', idade: 17 }
-maioresDeIdade([pessoa1, pessoa2, pessoa3]) // [pessoa1, pessoa2]
+const pessoa1 = { id: 1, nome: "João", idade: 20 };
+const pessoa2 = { id: 2, nome: "Maria", idade: 18 };
+const pessoa3 = { id: 3, nome: "José", idade: 17 };
+maioresDeIdade([pessoa1, pessoa2, pessoa3]); // [pessoa1, pessoa2]
 
-console.log(maioresDeIdade([pessoa1, pessoa2, pessoa3]))
+console.log(maioresDeIdade([pessoa1, pessoa2, pessoa3]));
 
 //Fim do seu código
 
@@ -117,14 +112,12 @@ console.log(maioresDeIdade([pessoa1, pessoa2, pessoa3]))
 //Início do seu código
 
 function resolveEquacao(vetor: number[]) {
-    const y = vetor.map((x) => x ^ 2 + 2 * x + 6)
+  const y = vetor.map((x) => x ^ (2 + 2 * x + 6));
 
-
-    return y
+  return y;
 }
 
-
-console.log(resolveEquacao([1, 2, 3]))
+console.log(resolveEquacao([1, 2, 3]));
 
 //Fim do seu código
 
@@ -144,9 +137,9 @@ console.log(resolveEquacao([1, 2, 3]))
 //Início do seu código
 
 function calcularQuadrado(a: number) {
-    return a * a
+  return a * a;
 }
-console.log(calcularQuadrado(4))
+console.log(calcularQuadrado(4));
 
 //Fim do seu código
 
@@ -164,10 +157,243 @@ console.log(calcularQuadrado(4))
 //Início do seu código
 
 function ehPositivo(a: number): boolean {
-    return a > 0;
+  return a > 0;
 }
-console.log(ehPositivo(2));  // true
+console.log(ehPositivo(2)); // true
 console.log(ehPositivo(-3)); // false
-console.log(ehPositivo(0));  // false
+console.log(ehPositivo(0)); // false
 
 //Fim do seu código
+
+/**
+ * Exercício 03 - Calcular média de três números
+ * Nome da função - calcularMedia
+ * Crie uma função que receba três números e retorne a média aritmética entre eles.
+ * @param {number} a Primeiro número
+ * @param {number} b Segundo número
+ * @param {number} c Terceiro número
+ * @returns {number} Retorna a média dos três números
+ * @example
+ * calcularMedia(2, 4, 6) // 4
+ * calcularMedia(10, 20, 30) // 20
+ */
+
+//Início do seu código
+
+function calcularMedia(a: number, b: number, c: number) {
+  const d = (a + b + c) / 3;
+  return d;
+}
+console.log(calcularMedia(1, 2, 3));
+
+//Fim do seu código
+
+/**
+ * Exercício 04 - Verificar se um ano é bissexto
+ * Nome da função - ehAnoBissexto
+ * Crie uma função que verifique se um ano é bissexto (divisível por 4).
+ * @param {number} ano Ano a ser verificado
+ * @returns {boolean} Retorna true se for bissexto e false caso contrário
+ * @example
+ * ehAnoBissexto(2020) // true
+ * ehAnoBissexto(2021) // false
+ */
+
+//Início do seu código
+
+function ehAnoBissexto(ano: number): boolean {
+  return ano % 4 === 0;
+}
+console.log(ehAnoBissexto(2024));
+
+//Fim do seu código
+
+/**
+ * Exercício 05 - Calcular fatorial de um número
+ * Nome da função - calcularFatorial
+ * Crie uma função que calcule o fatorial de um número inteiro não negativo.
+ * @param {number} num Número para cálculo do fatorial
+ * @returns {number} Retorna o resultado do fatorial
+ * @example
+ * calcularFatorial(5) // 120
+ * calcularFatorial(0) // 1
+ */
+
+//Início do seu código
+
+function calcularFatorial(num: number): number {
+  if (num === 0 || num === 1) {
+    return 1;
+  }
+
+  let resultado = 1;
+
+  for (let i = 2; i <= num; i++) {
+    resultado *= i;
+  }
+
+  return resultado;
+}
+console.log(calcularFatorial(5));
+
+//Fim do seu código
+
+/**
+ * Exercício 06 - Encontrar o menor número em um array
+ * Nome da função - encontrarMenorNumero
+ * Crie uma função que percorra um array de números e retorne o menor valor encontrado.
+ * @param {number[]} vetor Array de números
+ * @returns {number} Retorna o menor número presente no array
+ * @example
+ * encontrarMenorNumero([3, 1, 5, 2, 4]) // 1
+ * encontrarMenorNumero([-3, -1, -5]) // -5
+ */
+
+//Início do seu código
+
+function encontrarMenorNumero(vetor: number[]) {
+  let menor = vetor[0];
+  for (let i = 1; i < vetor.length; i++) {
+    if (vetor[i] < menor) {
+      menor = vetor[i];
+    }
+  }
+  return menor;
+}
+console.log(encontrarMenorNumero([3, 10, 5, 2, 4]));
+
+//Fim do seu código
+
+/**
+ * Exercício 07 - Calcular o maior entre dois números
+ * Nome da função - calcularMaior
+ * Crie uma função que receba dois números e retorne o maior deles.
+ * @param {number} a Primeiro número
+ * @param {number} b Segundo número
+ * @returns {number} Retorna o maior dos dois valores
+ * @example
+ * calcularMaior(2, 3) // 3
+ * calcularMaior(5, 1) // 5
+ */
+
+//Início do seu código
+
+function calcularMaior(a: number, b: number) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+console.log(calcularMaior(6, 9));
+
+//Fim do seu código
+
+/**
+ * Exercício 08 - Concatenar duas strings
+ * Nome da função - concatenarStrings
+ * Crie uma função que receba duas strings e as retorne unidas em uma única string.
+ * @param {string} s1 Primeira string
+ * @param {string} s2 Segunda string
+ * @returns {string} Retorna as duas strings concatenadas
+ * @example
+ * concatenarStrings('Olá, ', 'mundo!') // 'Olá, mundo!'
+ * concatenarStrings('123', '456') // '123456'
+ */
+
+//Início do seu código
+
+function concatenarStrings(s1: string, s2: string) {
+  const str0 = s1;
+  const str1 = s2;
+  const novaString = str0.concat(str1);
+  return novaString;
+}
+console.log(concatenarStrings("Olá, ", "123"));
+
+//Fim do seu código
+
+/**
+ * Exercício 09 - Inverte a ordem dos caracteres de uma string
+ * Nome da função - inverteString
+ * Crie uma função que receba uma string e retorne essa string com os caracteres em ordem inversa.
+ * @param {string} str A string que será invertida
+ * @returns {string} Retorna a string com os caracteres em ordem inversa
+ * @example
+ * inverteString("hello") // "olleh"
+ * inverteString("abcdef") // "fedcba"
+ */
+
+// Início do seu código
+//OBS: não use as funções reverse e join
+function inverteString(str: string) {
+  let res = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    if (str) {
+      res += str[i];
+    }
+  }
+  return res;
+}
+console.log(inverteString("asdf"));
+
+// Fim do seu código
+
+/**
+ * Exercício 10 - Contagem de vogais
+ * Nome da função - contaVogais
+ * Crie uma função que receba uma string e retorne a quantidade de vogais presentes na string.
+ * @param {string} str A string que será analisada
+ * @returns {number} Retorna a quantidade de vogais na string
+ * @example
+ * contaVogais("hello") // 2
+ * contaVogais("abcdef") // 2
+ */
+
+// Início do seu código
+
+// Fim do seu código
+
+/**
+ * Exercício 11 - divisivelPor7Ou9
+ * Nome da função - divisivelPor7Ou9
+ * Crie uma função que retorna um array com os números divisíveis por 7 ou por 9 no intervalo
+ * @param {number} min Número mínimo
+ * @param {number} max Número máximo
+ * @returns {number[]} Retorna um array com os números divisíveis por 7 ou por 9 no intervalo
+ * @example
+ * divisivelPor7Ou9(1, 50) // [7, 9, 14, 18, 21, 27, 28, 35, 36, 42, 45, 49]
+ * divisivelPor7Ou9(7, 70) // [7, 9, 14, 18, 21, 27, 28, 35, 36, 42, 45, 49, 54, 56, 63, 70]
+ */
+
+//Início do seu código
+
+function divisivelPor7Ou9(minimo: number, maximo: number) {
+  const vazio = [];
+
+  for (let i = minimo; i <= maximo; i++) {
+    const element = i;
+    if (i % 7 == 0 || i % 9 == 0) {
+      vazio.push(i);
+    }
+  }
+  return vazio;
+}
+
+console.log(divisivelPor7Ou9(1, 50));
+//Fim do seu código
+
+/**
+ * Exercício 12 - Contagem de consoantes
+ * Nome da função - contaConsoantes
+ * Crie uma função que receba uma string e retorne a quantidade de consoantes presentes na string.
+ * @param {string} str A string que será analisada
+ * @returns {number} Retorna a quantidade de consoantes na string
+ * @example
+ * contaConsoantes("hello") // 3
+ * contaConsoantes("abcdef") // 4
+ */
+
+// Início do seu código
+
+// Fim do seu código
