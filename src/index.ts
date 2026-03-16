@@ -1,3 +1,5 @@
+//LISTA O1!
+
 /**
  * Exercício 01 - cria um novo vetor com os valores do vetor original mais dois novos valores
  * Nome da função - criaNovoVetor
@@ -37,6 +39,7 @@ console.log(criaNovoVetor([1, 2, 3], 0, 0))
  */
 
 //Início do seu código
+
 function divisivelPor11(minimo: number, maximo: number) {
 
 
@@ -54,10 +57,7 @@ function divisivelPor11(minimo: number, maximo: number) {
 
 console.log(divisivelPor11(1, 110))
 
-
-
 //Fim do seu código
-
 
 /**
  *  Exercício 03 - maioresDeIdade
@@ -79,40 +79,74 @@ interface Pessoa {
 }
 
 //Início do seu código
-function maioresDeIdade() {
 
+function maioresDeIdade(vetor: Pessoa[]) {
+
+    const vazio = [];
+
+    for (let i = 0; i < vetor.length; i++) {
+        const element = vetor[i]!;
+        if (element.idade >= 18) {
+            vazio.push(element)
+        }
+    }
+
+
+    return vazio
 }
+
+const pessoa1 = { id: 1, nome: 'João', idade: 20 }
+const pessoa2 = { id: 2, nome: 'Maria', idade: 18 }
+const pessoa3 = { id: 3, nome: 'José', idade: 17 }
+maioresDeIdade([pessoa1, pessoa2, pessoa3]) // [pessoa1, pessoa2]
+
+console.log(maioresDeIdade([pessoa1, pessoa2, pessoa3]))
 
 //Fim do seu código
 
+/**
+ * Exercício 04 - resolve equação
+ * Nome da função - resolveEquacao
+ * Crie uma função que retorne os pontos em Y a partir de um vetor dos pontos em X da equação y = x^2 + 2x + 6
+ * @param {number[]} vetor Vetor de pontos em X
+ * @returns {number[]} Retorna um array com os pontos em Y
+ * @example
+ * resolveEquacao([1, 2, 3]) // [9, 14, 21]
+ */
+
+//Início do seu código
+
+function resolveEquacao(vetor: number[]) {
+    const y = vetor.map((x) => x ^ 2 + 2 * x + 6)
 
 
-
-
-
-
-
-
-
-
-
-console.log("Início da execução do código")
-//async function funcao (){
-const funcao = async () => {
-    const prom =
-        new Promise<string>((resolve, reject) => {
-            setTimeout(function handle() {
-                reject("Executei a função")
-            }, 5000)
-        })
-    return prom
-}
-try {
-const resultado = await funcao()
-console.log(erro)
-}
-catch (erro) {
-    console.log("Minha mensagem de erro:" + erro)
+    return y
 }
 
-console.log("Fim da execução do código")
+
+console.log(resolveEquacao([1, 2, 3]))
+
+//Fim do seu código
+
+//LISTA 02!
+
+/**
+ * Exercício 01 - Calcular o quadrado de um número
+ * Nome da função - calcularQuadrado
+ * Crie uma função que receba um número e retorne o seu valor elevado ao quadrado.
+ * @param {number} a Número a ser calculado
+ * @returns {number} Retorna o quadrado do número
+ * @example
+ * calcularQuadrado(2) // 4
+ * calcularQuadrado(-3) // 9
+ */
+
+//Início do seu código
+
+function calcularQuadrado(a: number) {
+    return a * a
+}
+console.log(calcularQuadrado(4))
+
+
+//Fim do seu código
