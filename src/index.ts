@@ -148,5 +148,26 @@ function calcularQuadrado(a: number) {
 }
 console.log(calcularQuadrado(4))
 
+//Fim do seu código
+
+/**
+ * Exercício 02 - Verificar se um número é positivo
+ * Nome da função - ehPositivo
+ * Crie uma função que retorne verdadeiro se o número for maior que zero e falso caso contrário.
+ * @param {number} a Número a ser verificado
+ * @returns {boolean} Retorna true para positivos e false para negativos ou zero
+ * @example
+ * ehPositivo(2) // true
+ * ehPositivo(-3) // false
+ */
+
+//Início do seu código
+
+function ehPositivo(a: number): boolean {
+    return a > 0;
+}
+console.log(ehPositivo(2));  // true
+console.log(ehPositivo(-3)); // false
+console.log(ehPositivo(0));  // false
 
 //Fim do seu código
