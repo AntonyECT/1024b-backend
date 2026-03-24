@@ -20,13 +20,14 @@ app.get("/pessoas", async (req, res) => {
 app.post("/pessoas", async(req, res) => {
     try {
         //const preparacao = await connection.prepare("select * from pessoa");
-        const id = 6
-        const nome = "Algum nome"
+        const {id,nome} = req.body
         const [resultado, campos] =
             await connection.execute(`insert into pessoa values (?,?)`, [id, nome])
         console.log(resultado)
+        res.status(201).json({mensagem:"Sucesso"})
     } catch (err) {
         console.log(err);
+        res.status(500).json({mensagem:"Erro no servidor!"})
     }
 })//Inserir
 
