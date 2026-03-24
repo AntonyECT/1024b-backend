@@ -6,17 +6,18 @@ const connection = mysql.createPool({
     user: 'root',
     database: 'aula1'
 });
-app.get("/pessoas", (req, res) => {
+app.get("/pessoas", async (req, res) => {
     try {
         const [resultado, campos] =
             await connection.execute(`SELECT * FROM pessoa`)
         console.log(resultado)
-        await connection.end();
+        res.status(200).json(resultado)
     } catch (err) {
         console.log(err);
+        res.status(500).json({mensagem:"Erro no servidor!"})
     }
 })//listar
-app.post("/pessoas", (req, res) => {
+app.post("/pessoas", async(req, res) => {
     try {
         //const preparacao = await connection.prepare("select * from pessoa");
         const id = 6
@@ -24,7 +25,6 @@ app.post("/pessoas", (req, res) => {
         const [resultado, campos] =
             await connection.execute(`insert into pessoa values (?,?)`, [id, nome])
         console.log(resultado)
-        await connection.end();
     } catch (err) {
         console.log(err);
     }
