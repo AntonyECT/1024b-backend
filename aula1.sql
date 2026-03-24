@@ -1,4 +1,5 @@
 CREATE DATABASE  IF NOT EXISTS `aula1`;
+use aula1;
 DROP TABLE IF EXISTS `pessoa`;
 CREATE TABLE `pessoa` (
   `id` int NOT NULL,
@@ -11,4 +12,3 @@ LOCK TABLES `pessoa` WRITE;
 INSERT INTO `pessoa` VALUES (1,'tere'),(2,'Marcelo'),(3,'Ana'),(4,'Marcos'),(5,'Marcos\'); drop database aula1; # '),(6,'Algum nome');
 /*!40000 ALTER TABLE `pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
