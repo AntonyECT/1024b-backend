@@ -28,8 +28,8 @@ na tabela pedidos. USE O COMANDO COUNT(*) para contar as quantidades.
 um json no formato '[{nome: "tere", quantidade_pedidos:1000}]' que retorne
 todos os clientes e a quantidade de pedidos que cada cliente fez
 */
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-1
+
+1;
 app.get("/cliente_data_pedido", async (require, res) => {
     try {
         const [resultado, campos] =
@@ -43,9 +43,8 @@ app.get("/cliente_data_pedido", async (require, res) => {
         mysqlErrorHandle.validar()
     }
 })
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-1
-2
+
+2;
 app.get("/pedidos_2026", async (req, res) => {
     try {
         const [resultado, campos] =
@@ -58,9 +57,8 @@ app.get("/pedidos_2026", async (req, res) => {
         mysqlErrorHandle.validar()
     }
 })
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-1
-3
+
+3;
 app.get("/quantidade_pedidos", async (req, res) => {
     try {
         const [resultado, campos] =
@@ -72,9 +70,8 @@ app.get("/quantidade_pedidos", async (req, res) => {
         mysqlErrorHandle.validar()
     }
 })
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-1
-4
+
+4;
 app.get("/quantidade_pedidos_clientes", async (req, res) => {
     try {
         const [resultado, campos] =
