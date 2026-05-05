@@ -113,6 +113,60 @@ app.get("/valor_pedido_total", async (req, res) => {
 
 
 
+/**
+ * 5) ROTA    /quantidade_produtos_por_cliente
+ * Crie um código que retorne o nome do cliente e a quantidade de produtos que cada pedido tem
+ *    formato    [{nome:"Nome Cliente",idpedido:1,quantidade_produtos:1000}]
+ * 
+ * 6)    /valor_pedido_total
+ * Crie um código que retorne o nome do cliente e o valor total de cada pedido
+ *    [{nome:"Nome Cliente",valor_total:1000}]
+ */
+
+5;
+app.get("/quantidade_produtos_por_cliente", async (req, res) => {
+  try {
+    const query = `
+      SELECT 
+        c.nome, 
+        p.idpedidos AS idpedido, 
+        SUM(ip.quantidade) AS quantidade_produtos
+      FROM clientes c
+      JOIN pedidos p ON c.idclientes = p.clientes_idclientes
+      JOIN itenspedidos ip ON p.idpedidos = ip.pedidos_idpedidos
+      GROUP BY p.idpedidos, c.nome
+    `;
+
+    const [resultado] = await connection.execute(query);
+    res.status(200).json(resultado);
+  } catch (err) {
+    const mysqlErrorHandle = new MysqlErrorHandle(err, res);
+    mysqlErrorHandle.validar();
+  }
+});
+
+6;
+app.get("/valor_pedido_total", async (req, res) => {
+  try {
+    const query = `
+      SELECT 
+        c.nome, 
+        SUM(ip.quantidade * prod.preco) AS valor_total
+      FROM clientes c
+      JOIN pedidos p ON c.idclientes = p.clientes_idclientes
+      JOIN itenspedidos ip ON p.idpedidos = ip.pedidos_idpedidos
+      JOIN produtos prod ON ip.produtos_idprodutos = prod.idprodutos
+      GROUP BY p.idpedidos, c.nome
+    `;
+
+    const [resultado] = await connection.execute(query);
+    res.status(200).json(resultado);
+  } catch (err) {
+    const mysqlErrorHandle = new MysqlErrorHandle(err, res);
+    mysqlErrorHandle.validar();
+  }
+});
+
 // app.get("/pessoas", async (req, res) => {
 //     try {
 //         const [resultado, campos] =
